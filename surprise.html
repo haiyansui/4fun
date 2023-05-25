@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Random Image Generator</title>
+  <title>Page Openings Counter</title>
 </head>
 <body>
-  <h1>Random Image Generator</h1>
-  <img id="randomImage" src="" alt="Random Image">
+  <h1>Page Openings Counter</h1>
+  <p>Page Openings: <span id="pageCount">0</span></p>
+  <img src="surprise.jpeg" alt="Image">
   
   <script>
-    // Define an array of image URLs
-    var imageUrls = [
-      "image1.jpg",
-      "image2.jpg",
-      "image3.jpg",
-      // Add more image URLs here
-    ];
+    // Retrieve the page count from local storage or initialize it to 0
+    var pageCount = localStorage.getItem("pageCount") || 0;
     
-    // Generate a random index based on the number of images
-    var randomIndex = Math.floor(Math.random() * imageUrls.length);
+    // Increment the page count
+    pageCount++;
     
-    // Get the reference to the image element
-    var imgElement = document.getElementById("randomImage");
+    // Store the updated page count in local storage
+    localStorage.setItem("pageCount", pageCount);
     
-    // Set the source of the image element to a randomly selected URL
-    imgElement.src = imageUrls[randomIndex];
+    // Update the page count display
+    document.getElementById("pageCount").textContent = pageCount;
   </script>
 </body>
 </html>
