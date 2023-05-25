@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Image Generator</title>
+</head>
+<body>
+  <h1>Random Image Generator</h1>
+  <img id="randomImage" src="" alt="Random Image">
+  
+  <script>
+    // Define an array of image URLs
+    var imageUrls = [
+      "image1.jpg",
+      "image2.jpg",
+      "image3.jpg",
+      // Add more image URLs here
+    ];
+    
+    // Generate a random index based on the number of images
+    var randomIndex = Math.floor(Math.random() * imageUrls.length);
+    
+    // Get the reference to the image element
+    var imgElement = document.getElementById("randomImage");
+    
+    // Set the source of the image element to a randomly selected URL
+    imgElement.src = imageUrls[randomIndex];
+  </script>
+</body>
+</html>
