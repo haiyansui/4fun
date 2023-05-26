@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Page Openings Counter</title>
+  <title>Friday joke</title>
 </head>
 <body>
-  <h1>Page Openings Counter</h1>
-  <p>Page Openings: <span id="pageCount">0</span></p>
-  <img src="surprise.jpeg" alt="Image">
+  <h1>Thank you for reading the managers brief! Here is a joke to close your week. Enjoy your weekend</h1>
+  <style>
+    #hiddenText {
+      display: none;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+  <p>Why did the scarecrow become an engineer?</p>
+
+  <button id="revealButton" onclick="revealText()">Click Me</button>
+  
+  <p id="hiddenText"> Because he was outstanding in his field!</p>
   
   <script>
-    // Retrieve the page count from local storage or initialize it to 0
-    var pageCount = localStorage.getItem("pageCount") || 0;
-    
-    // Increment the page count
-    pageCount++;
-    
-    // Store the updated page count in local storage
-    localStorage.setItem("pageCount", pageCount);
-    
-    // Update the page count display
-    document.getElementById("pageCount").textContent = pageCount;
+    function revealText() {
+      var hiddenText = document.getElementById("hiddenText");
+      hiddenText.style.display = "block";
+    }
   </script>
 </body>
 </html>
